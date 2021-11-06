@@ -96,25 +96,25 @@ export default class App extends Component {
                                     Header: "Longitude",
                                     accessor: "longitude",
                                     headerStyle: { "background": "#e3b0ac", "border":"1px solid #EC9886" , "fontWeight":"1000"},
-                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular"},
+                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular" , "fontWeight":"1000"},
                                 },
                                 {
                                     Header: "Latitude",
                                     accessor: "latitude",
                                     headerStyle: { "background": "#e3b0ac", "border":"1px solid #EC9886", "fontWeight":"1000"},
-                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular"},
+                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular", "fontWeight":"1000"},
                                 },
                                 {
                                     Header: "Location Name",
                                     accessor: "display_name",
                                     headerStyle: { "background": "#e3b0ac", "border":"1px solid #EC9886", "fontWeight":"1000"},
-                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular"},
+                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular", "fontWeight":"1000"},
                                 },
                                 {
                                     Header: "Timezone",
                                     accessor: "timezone",
                                     headerStyle: { "background": "#e3b0ac", "border":"1px solid #EC9886", "fontWeight":"1000"},
-                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular"},
+                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular", "fontWeight":"1000"},
                                 },
                                 {
                                     Header: "Delete",
@@ -132,7 +132,7 @@ export default class App extends Component {
                                                 
                                             }}
                                         >
-                                        <Button id="delete" color="danger" onClick={() => { this.deleteLocation(value); }} > Delete </Button>
+                                        <Button id="delete" onClick={() => { this.deleteLocation(value); }} > Delete </Button>
                                         </a>
                                     ),
                                 },

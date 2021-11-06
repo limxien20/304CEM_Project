@@ -59,7 +59,9 @@ app.get("/getAllLocation", (req, res) => {
 });
 
 app.get("/deleteLocation", (req,res) => {
-  Location.deleteOne({ place : req.query.place }).then((response) =>{
+  const place = req.query.place;
+
+  Location.deleteOne({ display_name : place }).then((response) =>{
     res.status(200).json(response);
   })
   .catch((error) =>{
