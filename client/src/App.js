@@ -89,28 +89,38 @@ export default class App extends Component {
                     <div className="container-fluid table">
                         <div className="col-sm-12">
                             <p />
-                            <ReactTable style={{backgroundColor: 'white', opacity: 0.8}}
+                            <ReactTable style={{backgroundColor: '#F7ECE9', opacity: 0.8}}
                             data={data}
                             columns={[
                                 {
                                     Header: "Longitude",
                                     accessor: "longitude",
+                                    headerStyle: { "background": "#e3b0ac", "border":"1px solid #EC9886" , "fontWeight":"1000"},
+                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular"},
                                 },
                                 {
                                     Header: "Latitude",
                                     accessor: "latitude",
+                                    headerStyle: { "background": "#e3b0ac", "border":"1px solid #EC9886", "fontWeight":"1000"},
+                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular"},
                                 },
                                 {
                                     Header: "Location Name",
                                     accessor: "display_name",
+                                    headerStyle: { "background": "#e3b0ac", "border":"1px solid #EC9886", "fontWeight":"1000"},
+                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular"},
                                 },
                                 {
                                     Header: "Timezone",
                                     accessor: "timezone",
+                                    headerStyle: { "background": "#e3b0ac", "border":"1px solid #EC9886", "fontWeight":"1000"},
+                                    style: { "border":"1px solid #e3b0ac", "fontFamily": "Nunito-Regular"},
                                 },
                                 {
                                     Header: "Delete",
                                     accessor: "display_name",
+                                    headerStyle: { "background": "#e3b0ac", "border":"1px solid #EC9886", "fontWeight":"1000"},
+                                    style: { "border":"1px solid #e3b0ac"},
                                     Cell: ({ value }) => (
                                         <a
                                             onClick={() => {
@@ -122,11 +132,13 @@ export default class App extends Component {
                                                 
                                             }}
                                         >
-                                        <Button color="danger" onClick={() => { this.deleteLocation(value); }} > Delete </Button>
+                                        <Button id="delete" color="danger" onClick={() => { this.deleteLocation(value); }} > Delete </Button>
                                         </a>
                                     ),
                                 },
+                                
                             ]}
+                            
                             defaultPageSize={5}
                             className="-striped -highlight"
                             />
