@@ -5,6 +5,7 @@ const app = express();
 const cors = require('cors');
 const apikey = 'pk.321250034965f0cb8471b465e5239fa1';
 const apikey2 = 'dce420e5122d494b8acf64489651d69e';
+var port = process.env.PORT || 5000; 
 
 
 app.use(cors())
@@ -74,6 +75,6 @@ app.get("/deleteLocation", (req,res) => {
 
 });
 
-app.listen(5000, ()=>{
+app.listen(port, ()=>{
     console.log('Server listening to port 5000');
 });
