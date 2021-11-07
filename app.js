@@ -15,6 +15,7 @@ var latitude, longitude, display_name;
 app.get('/getLocation', (req, res) =>{
 
     const place = req.query.place;
+    
     const querystr = `https://us1.locationiq.com/v1/search.php?key=${apikey}&q=${place}&format=json`;
     const querystr2 = `https://api.ipgeolocation.io/timezone?apiKey=${apikey2}&location=${place}`;
 
@@ -27,7 +28,6 @@ app.get('/getLocation', (req, res) =>{
 
           timezone = response2.data.date_time_txt;
 
-          
           res.send("Latitude: " + response.data[0].lat + "     Longitude: " + response.data[0].lon +  "     Location Name: " + response.data[0].display_name +  "     Timezone: " + response2.data.date_time_txt);
 
           locationValue = new Location({
@@ -36,6 +36,10 @@ app.get('/getLocation', (req, res) =>{
               display_name : display_name,
               timezone: timezone
           });
+          if(!locationValue.display_name){
+            res.status(200).json('Location Not Found');
+            return;
+          }
           locationValue.save()
           .then((response) => {
             res.status(200).json(response);
